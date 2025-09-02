@@ -1,0 +1,677 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Document</title>
+<style>
+    * {
+        padding: 0;
+        margin: 0;
+    }
+    body {
+        width: 100vw;
+        height: 100vh;
+        overflow-x: hidden;
+    }
+    .mainWrap {
+        width: 100%;
+    }
+
+
+    /* Header */
+    nav {
+        width: 100%;
+        height: 80px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 50px;
+    }
+    nav div {
+        font-size: 15px;
+    }
+    nav .logo {
+        width: 120px;
+        height: 80px;
+        background-image: url(./img/logo_g.png);
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: center;
+        margin-right: 100px;
+    }
+    .nav07 {
+        width: 20px;
+        height: 10px;
+        background-image: url(./img/cir_kr.png);
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        margin-left: 150px;
+    }
+    .nav08 {
+        margin-left: -30px;
+    }
+
+    
+    /* Sections (Full-screen height) */
+    section {
+        width: 100%;
+        height: 100vh;
+    }
+    .slideBox {
+    width: 100%;
+    height: 60%;
+    position: relative;
+    overflow: hidden;
+    background-color: #000; /* for visibility */
+    }
+    .slider {
+        display: flex;
+        width: 700%;
+        height: 100%;
+    }
+
+    .slide05{
+        background-image: url(./img/visual01.png);
+    }
+
+    .slide01{
+        background-image: url(./img/visual01.png);
+        background-repeat: no-repeat;
+    }
+    .slide02{
+        background-image: url(./img/visual02.png);
+        background-repeat: no-repeat;
+    }
+    .slide03{
+        background-image: url(./img/visual03.png);
+        background-repeat: no-repeat;
+    }
+    .slide04{
+        background-image: url(./img/visual04.png);
+        background-repeat: no-repeat;
+    }
+    .slide05{
+        background-image: url(./img/visual05.png);
+        background-repeat: no-repeat;
+    }
+    .slide01{
+        background-image: url(./img/visual01.png);
+        background-repeat: no-repeat;
+    }
+    .slide {
+        width: calc(100%/7);
+        height: 100%;
+        flex-shrink: 0;
+        color: white;
+        font-size: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: darkblue;
+    }
+    .prev, .next {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        background-color: rgba(255,255,255,0.6);
+        border: none;
+        padding: 10px 20px;
+        font-size: 30px;
+        cursor: pointer;
+        z-index: 10;
+    }
+    .prev {
+        left: 10px;
+    }
+    .next {
+        right: 10px;
+    }
+    .foot01{
+        width: 100%;
+        height: 200px;
+        text-align: center;
+        /* background-color: lightgrey; */
+        padding-top: 100px;
+        padding-bottom: 70px;
+    }
+    .foot01 h1{
+        font-size: 35px;
+    }
+    
+    
+    /* section02 */
+    #section02 {
+        /* background-color: lightgray; */
+        width: 100%;
+        height: 250px;
+        display: flex;
+        justify-content: center;
+        gap: 100px;
+    }
+    #section02 > div{
+        width: 100px;
+        height: 120px;
+    }
+    .ads01{
+        width: 100%;
+        height: 200px;
+        display: flex;
+        justify-content: center;
+        gap: 60px;
+        /* background-color: lightgrey; */
+    }
+    .ad01{
+        background-position:top;
+        background-image: url(./img/section01_icon01.png);
+        background-repeat: no-repeat;
+        display: flex;
+        justify-content: center;
+        align-items: end;
+        font-size: 23px;
+        font-weight:bold;
+        color: grey;
+        transform: translate(-150px,0);
+        transition: all 0.5s linear;
+        opacity: 0;
+    }
+    .ad02{
+        background-position:top;
+        background-image: url(./img/section01_icon02.png);
+        background-repeat: no-repeat;
+        display: flex;
+        justify-content: center;
+        align-items: end;
+        font-size: 23px;
+        font-weight:bold;
+        color: grey;
+        transform: translate(0,150px);
+        transition: all 0.5s linear;
+        opacity: 0;
+    }
+    .ad03{
+        background-position:top;
+        background-image: url(./img/section01_icon03.png);
+        background-repeat: no-repeat;
+        display: flex;
+        justify-content: center;
+        align-items: end;
+        font-size: 23px;
+        font-weight:bold;
+        color: grey;
+        transform: translate(0,-150px);
+        transition: all 0.5s linear;
+        opacity: 0;
+    }
+    .ad04{
+        background-position:top;
+        background-image: url(./img/section01_icon04.png);
+        background-repeat: no-repeat;
+        display: flex;
+        justify-content: center;
+        align-items: end;
+        font-size: 23px;
+        font-weight:bold;
+        color: grey;
+        transform: translate(0,150px);
+        transition: all 0.5s linear;
+        opacity: 0;
+    }
+    .ad05{
+        background-position:top;
+        background-image: url(./img/section01_icon05.png);
+        background-repeat: no-repeat;
+        display: flex;
+        justify-content: center;
+        align-items: end;
+        font-size: 23px;
+        font-weight:bold;
+        color: grey;
+        transform: translate(150px,0);
+        transition: all 0.5s linear;
+        opacity: 0;
+    }
+    .ad_on{
+        transform: translate(0,0);
+        opacity: 1;
+    }
+
+
+    /* section03 */
+    #section03 {
+    /* background-color: lightcoral; */
+    width: 100%;
+    height: 400px;
+    display: flex;
+}
+
+/* 첫 번째 박스 */
+.sec03Box1 {
+    width: 1000px;
+    height: 350px;
+    display: flex;
+    margin: 0 auto;
+}
+
+/* 왼쪽 텍스트 영역 */
+.sec03adp1 {
+    width: 500px;
+    height: 100%;
+    position: relative;
+}
+
+/* 텍스트 */
+.sec03Nav1 {
+    position: absolute;
+    left: 100px; /* 25% of 500px */
+    top: 105px;  /* 30% of 350px */
+    font-size: 30px;
+    color: darkgreen;
+    font-weight: bold;
+}
+
+.sec03Nav2 {
+    position: absolute;
+    left: 100px;
+    top: 175px;  /* 50% of 350px */
+}
+
+/* 오른쪽 이미지 영역 */
+.sec03adp2 {
+    width: 300px;
+    height: 100%;
+    position: relative;
+}
+
+.sec03Img01 {
+    width: 400px;
+    height: 100%;
+    background-image: url(./img/section02_prd01.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    position: absolute;
+    top: 20px;
+    right: 30px;
+}
+
+/* 두 번째 박스 */
+.sec03Box2 {
+    width: 1000px;
+    height: 350px;
+    display: flex;
+    margin: 0 auto;
+}
+
+/* 왼쪽 이미지 영역 */
+.sec03adp3 {
+    width: 500px;
+    height: 100%;
+    position: relative;
+}
+
+.sec03Img02 {
+    width: 400px;
+    height: 100%;
+    background-image: url(./img/section02_prd02.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    position: absolute;
+    top: 20px;
+    right: 30px;
+}
+
+/* 오른쪽 텍스트 영역 */
+.sec03adp4 {
+    width: 500px;
+    height: 100%;
+    position: relative;
+}
+
+.sec03Nav3 {
+    position: absolute;
+    left: 100px;
+    top: 105px;
+    font-size: 30px;
+    color: darkgreen;
+    font-weight: bold;
+}
+
+.sec03Nav4 {
+    position: absolute;
+    left: 100px;
+    top: 175px;
+}
+    
+    #section04 {
+        background-color: #004f4a;
+        position: relative;
+    }
+    .sec04ad1{
+        width: 20%;
+        height: 100%;
+        color: white;
+        position: absolute;
+        left: 300px; top: 150px;
+        font-size: 30px;
+    }
+    .sec04ad2{
+        font-size: 40px;
+        font-weight: bold;
+    }
+
+    .sec04ad3{
+        width: 50%;
+        height: 100%;
+        position: absolute;
+        right: -50px; top: 150px;
+    }
+
+    .sec04Line1{
+        display: block;
+        width: 80%;
+        border: 1px solid white;
+    }
+    .sec04Line2{
+        display: block;
+        width: 80%;
+        border: 1px solid white;
+    }
+    .sec04Line3{
+        display: block;
+        width: 80%;
+        border: 1px solid white;
+    }
+    .sec04Line4{
+        display: block;
+        width: 80%;
+        border: 1px solid white;
+        margin-top: 20px;
+    }
+    .sec04ads{
+        width: 80%;
+        height: 50px;
+        margin: 10px;
+        color: white;
+        font-size: 20px;
+    }
+    
+    #section05 {
+        /* background-color: lightgoldenrodyellow; */
+        position: relative;
+    }
+
+    .sec05text1{
+        width: 60%;
+        height: 10%;
+        color: grey;
+        position: absolute;
+        top: 70px;left: 250px;
+    }
+    .sec05text2{
+        width: 60%;
+        height: 20%;
+        color: black;
+        position: absolute;
+        top: 130px; left: 250px;
+        font-size: 50px;
+        font-weight: bold;
+    }
+    .sec05ads{
+        width: 90%;
+        height: 50%;
+        /* background-color: blue; */
+        position: relative;
+        top: 30%; left: 5%;
+        /* border: 1px solid black; */
+        display: flex;
+        gap: 30px;
+        justify-content: center;
+        align-items: center;
+    }
+    .sec05ad1{
+        width: 25%;
+        height: 100%;
+        background-image: url(./img/section04_img01_over.png);
+        background-repeat: no-repeat;
+    }
+    .sec05ad2{
+        width: 25%;
+        height: 100%;
+        background-image: url(./img/section04_img02_over.png);
+        background-repeat: no-repeat;
+    }
+    .sec05ad3{
+        width: 25%;
+        height: 100%;
+        background-image: url(./img/section04_img03_over.png);
+        background-repeat: no-repeat;
+    }
+    .sec05ad4{
+        width: 25%;
+        height: 100%;
+        background-image: url(./img/section04_img04_over.png);
+        background-repeat: no-repeat;
+    }
+
+
+
+
+</style>
+</head>
+<body>
+<div class="mainWrap">
+    <header>
+        <nav>
+        <div class="logo"></div>
+        <div class="nav01">이롬그룹</div>
+        <div class="nav02">사업분야</div>
+        <div class="nav03">이롬</div>
+        <div class="nav04">이롬헬스케어</div>
+        <div class="nav05">뉴스&홍보</div>
+        <div class="nav06">이롬人</div>
+        <div class="nav07"></div>
+        <div class="nav08">햄버거</div>
+        </nav>
+    </header>
+
+<section id="section01">
+<div class="slideBox">
+    <div class="slider" ontransitionend="fixloop()">
+        <div class="slide05 slide"></div>
+
+        <div class="slide01 slide"></div>
+        <div class="slide02 slide"></div>
+        <div class="slide03 slide"></div>
+        <div class="slide04 slide"></div>
+        <div class="slide05 slide"></div>
+
+        <div class="slide01 slide">슬라이드 1</div>
+    </div>
+    <button class="prev" onclick="prevBtn()">&#10094;</button>
+    <button class="next" onclick="nextBtn()">&#10095;</button>
+</div>
+<div class="foot01">
+    <h1>위대함을 향한 이롬의 끊임없는 도전과 혁신</h1><br/>
+    <p>
+    끊임없는 도전과 혁신으로 최적화된 제품을 개발,유통하여<br/>
+    <strong>건강한 개인과 건강한 사회에 기여하는 라이프케어 컴퍼니</strong>
+    </p>
+</div>
+</section>
+
+<section id="section02">
+    <div class="ads01">
+        <div class="ad01">BUSINESS</div>
+        <div class="ad02">GLOBAL</div>
+        <div class="ad03">BIO&MEDICAL</div>
+        <div class="ad04">HUMAN</div>
+        <div class="ad05">EDUCATION</div>
+    </div>
+</section>
+
+<section id="section03">
+    <div class="sec03Box1">
+        <div class="sec03adp1">
+            <div class="sec03Nav1">이롬</div>
+            <div class="sec03Nav2">
+                건강한 개인과 건강한 사회에 기여하는<br>
+                토탈 라이프케어 컴퍼니
+            </div>
+        </div>
+        <div class="sec03adp2">
+            <div class="sec03Img01"></div>
+        </div>
+    </div>
+        <div class="sec03Box2">
+            <div class="sec03adp3">
+                <div class="sec03Img02"></div>
+            </div>
+        <div class="sec03adp4">
+            <div class="sec03Nav3">이롬헬스케어</div>
+            <div class="sec03Nav4">
+                건강한 라이프 스타일<br>
+                이롬헬스케어가 함께합니다
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="section04">
+    <div class="sec04ad1">
+        <div>life care company,<br>erom group<br><br>
+        <div class="sec04ad2">NEWS</div>
+        </div>
+    </div>
+    <div class="sec04ad3">
+        <div class="sec04Line1"></div>
+        <div class="sec04ads">(주)이롬,'미네랄워터 리프레쉬' 2025 미스코리아 공식 후원</div>
+        <div class="sec04ads">25.08.11</div>
+        <div class="sec04Line2"></div>
+        <div class="sec04ads">의왕시 첫 종합병원,응급의료센터 포함한 스마트병원으로 조성</div>
+        <div class="sec04ads">25.06.13</div>
+        <div class="sec04Line3"></div>
+        <div class="sec04ads">(주)이롬,'미네랄워터 리프레쉬'로 2년 연속 OBS전국 배드민턴대회 공식 협찬</div>
+        <div class="sec04Line4"></div>
+    </div>
+
+    </div>
+</section>
+
+<section id="section05">
+    <div class="sec05text1">이롬그룹은 과학의 힘으로 자연을 담아<br>건강에 대한 새로운 해답을 제공해 나가겠습니다</div>
+    <div class="sec05text2">erom Company About</div>
+    <div class="sec05ads">
+        <div class="sec05ad1"></div>
+        <div class="sec05ad2"></div>
+        <div class="sec05ad3"></div>
+        <div class="sec05ad4"></div>
+    </div>
+</section>
+
+<script>
+    let slider = document.querySelector(".slider")
+    let slides = document.querySelectorAll(".slide").length
+
+    let index = 1;
+
+    let slideTotal = 100 / slides
+
+    function slideMove(){
+        slider.style.transform = `translateX(${-slideTotal * index}%)`
+    }
+    
+
+    function prevBtn(){
+            index --;
+            if (index < 0) {
+                index = slides -1;
+                
+            }
+            slideMove();
+        }
+        function nextBtn() {
+            index++;
+            if (index >= slides) {
+                index = 0;
+                
+            }
+            slideMove();
+        };
+
+    function fixloop(){
+        if(index == slides-1){
+            slider.style.transition = "none"
+            index = 1;
+            slideMove()
+            void slider.offsetWidth;
+            slider.style.transition = "all 0.4s linear"
+        }else if(index == 0){
+            slider.style.transition = "none"
+            index = slides-1;
+            slideMove()
+            void slider.offsetWidth;
+            slider.style.transition = "all 0.4s linear"
+        }
+    }
+
+    let ads = document.querySelector(".ads01")
+    let ad01 = document.querySelector(".ad01")
+    let ad02 = document.querySelector(".ad02")
+    let ad03 = document.querySelector(".ad03")
+    let ad04 = document.querySelector(".ad04")
+    let ad05 = document.querySelector(".ad05")
+
+    document.addEventListener("DOMContentLoaded", function(){
+        let section01 = document.getElementById("section01")
+        let section02 = document.getElementById("section02")
+        let section03 = document.getElementById("section03")
+        let section04 = document.getElementById("section04")
+        let section05 = document.getElementById("section05")
+
+        function startscroll(){
+            let sy = window.scrollY;
+            let sec1 = section01.offsetTop
+            let sec2 = section02.offsetTop
+            let sec3 = section03.offsetTop
+            let sec4 = section04.offsetTop
+            let sec5 = section05.offsetTop
+
+            if(sy >= sec1 && sy <= sec2 + section02.offsetHeight ){
+                ad01.classList.add("ad_on")
+                ad02.classList.add("ad_on")
+                ad03.classList.add("ad_on")
+                ad04.classList.add("ad_on")
+                ad05.classList.add("ad_on")
+            }else{
+                ad01.classList.remove("ad_on")
+                ad02.classList.remove("ad_on")
+                ad03.classList.remove("ad_on")
+                ad04.classList.remove("ad_on")
+                ad05.classList.remove("ad_on")
+                
+            }
+            // if(sy >= sec2 && sy <= sec3 + section03.offsetHeight ){
+            //     ad01.classList.add("ad_on")
+            //     ad02.classList.add("ad_on")
+            //     ad03.classList.add("ad_on")
+            //     ad04.classList.add("ad_on")
+            //     ad05.classList.add("ad_on")
+            // }else{
+            //     ad01.classList.remove("ad_on")
+            //     ad02.classList.remove("ad_on")
+            //     ad03.classList.remove("ad_on")
+            //     ad04.classList.remove("ad_on")
+            //     ad05.classList.remove("ad_on")
+                
+            // }
+        }
+        window.addEventListener("scroll", startscroll)
+    })
+
+    
+</script>
+</body>
+</html>
